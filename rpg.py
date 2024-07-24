@@ -30,7 +30,7 @@ class Guerreiro(Personagem):
 
     def acao_especial(self):
         self.usar_espada()
-
+     
 class Curandeiro(Personagem):
     def __init__(self, nome):
         super().__init__(nome)
@@ -113,7 +113,12 @@ kain._vida -= 20
 mig1 = Caveira('Mig1', 300)
 clow = Clow('Gloob', 100)
 guto = Mago('Guto')
-
+def ataque_duplo(guerreiro,arqueiro):
+    mig1._forca-=100
+    clow._forca-=50
+    guerreiro._nivel+=2
+    arqueiro._nivel+=2
+    print(f"Que ataque incrivel!!!! agora {guerreiro._nome} esta no nível:{guerreiro._nivel} e o arqueiro esta no nível: {arqueiro._nivel}")
 # EXEMPLO DE USO-------------------------------------->
 arq1.atirar_flecha()
 clow.atacar(arq1)
@@ -132,3 +137,6 @@ for personagem in personagens:
 
 for inimigo in inimigos:
     inimigo.acao_especial()
+
+ataque_duplo(kain,arq1)
+
